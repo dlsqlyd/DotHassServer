@@ -1,0 +1,3 @@
+[submodule "dotnetty"]
+	path = libraries/dotnetty
+	url = https://github.com/Azure/DotNetty.git
