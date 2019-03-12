@@ -1,0 +1,43 @@
+﻿// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace Microsoft.Owin.Infrastructure
+{
+    using AppFunc = Func<IDictionary<string, object>, Task>;
+
+    /// <summary>
+    /// Converts between an OwinMiddlware and an <typeref name="Func&lt;IDictionary&lt;string,object&gt;, Task&gt;"/>.
+    /// </summary>
+    public sealed class AppFuncTransition : OwinMiddleware
+    {
+        private readonly AppFunc _next;
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="next"></param>
+        public AppFuncTransition(AppFunc next) : base(null)
+        {
+            _next = next;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public override Task Invoke(IOwinContext context)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException("context");
+            }
+
+            return _next(context.Environment);
+        }
+    }
+}

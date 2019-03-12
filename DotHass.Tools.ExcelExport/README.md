@@ -1,0 +1,1 @@
+$(SolutionDir)src\DotHass.Tools.Excel2Json\bin\Release\PublishOutput\DotHass.Tools.Excel2Json.exe Root="D:/Workspace/DotHass/samples/Configs"  ExcelDir="Assets" JsonDir="Resources/Configs" CSharpDir="./" CSharpTemplate="Assets/Templates/ConfigTemplate.txt" ShowInfo=false

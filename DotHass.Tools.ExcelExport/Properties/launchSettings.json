@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DotHass.Tools.ExcelExport": {
+      "commandName": "Project",
+      "commandLineArgs": "Root=..\\\\..\\\\..\\\\..\\\\..\\\\..\\\\..\\\\Assets  JsonDir=__Export/Jsons                      ShowInfo=true                          ExcelDir=Configs/NpcInfo.xlsx"
+    }
+  }
+}
