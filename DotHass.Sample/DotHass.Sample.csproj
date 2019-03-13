@@ -3,13 +3,49 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.2</TargetFramework>
+    <!--不加laster的话，入口函数main不能异步启动 -->
+    <LangVersion>latest</LangVersion>
+    <RuntimeIdentifiers>win10-x64;ubuntu.16.10-x64</RuntimeIdentifiers>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DotHass.Hosting\DotHass.Hosting.csproj" />
     <ProjectReference Include="..\DotHass.Identity\DotHass.Identity.csproj" />
     <ProjectReference Include="..\DotHass.Middleware\DotHass.Middleware.csproj" />
+    <ProjectReference Include="..\DotHass.Repository\DotHass.Repository.csproj" />
     <ProjectReference Include="..\DotHass.Server\DotHass.Server.csproj" />
+    <PackageReference Include="IdGen" Version="2.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Redis" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DiagnosticAdapter" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="2.2.0" />
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <None Update="Resources\AppSettings\appsettings.Development.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\AppSettings\appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\AppSettings\appsettings.Production.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\AppSettings\appsettings.Staging.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Configs\GangConfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <Folder Include="Config\" />
+    <Folder Include="Resources\Configs\" />
   </ItemGroup>
 
 </Project>

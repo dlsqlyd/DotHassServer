@@ -5,60 +5,6 @@
 
 
 
-CacheRepository
-
-
-
-因为..SharpRepository的CacheRepository引用有点问题..所以这里复制了一份
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-cachemanager 可以配置多个缓存处理...
-
-配置一个内存缓存..一个redis 缓存..实现多级缓存
-
-
-
 1.DictionaryCacheHandle or SystemRuntimeCaching  以及msmemorycache都是不会序列化的
 
 

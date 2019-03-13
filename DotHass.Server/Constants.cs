@@ -3,6 +3,9 @@
 
 namespace DotHass.Server
 {
+    /// <summary>
+    /// copy form dothass.hosting..不引用dothass.hosting..根据owin规范hosting和server彻底分开
+    /// </summary>
     public static class Constants
     {
         #region OWIN v1.0.0 - 3.2.1. Request Data
